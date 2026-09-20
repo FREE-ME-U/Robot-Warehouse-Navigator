@@ -170,7 +170,8 @@ def depth_limited_search(problem, limit):
 def iterative_deepening_search(problem, max_depth):
     for limit in range(max_depth + 1):
         result = depth_limited_search(problem, limit)
-        return result
+        if result is not None:
+            return result
     return None
 
 def manhattan_distance(state, goal):
